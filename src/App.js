@@ -1,19 +1,25 @@
 import './App.css';
 import React from 'react';
 import Main from './components/Main'
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Signin from './components/Signin'
+import Patient from './components/Patient'
+import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import ReactDOM from "react-dom/client";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <div className="App">
-          <Route path='/' component={Main}/>
-        </div>
+        <Route path='/' element={<Signin/>}/>
+        <Route path='/main' element={<Main/>}/>
+        <Route path='/patient'element={<Patient/>}/>
+        
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 export default App;
 
