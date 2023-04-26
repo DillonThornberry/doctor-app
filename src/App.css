@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.input-label{
+  padding-right: 2px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,6 +39,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.left{
+  flex: 1;
+  margin-left: 1px;
+}
+
+.right{
+ margin-left: 10px;
+ margin-right: 1px;
+}
+
+.patient-card {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: top;
+  list-style-type: none;
+  padding: 0; 
+  width: 100%;
+}
+
+.patient-list {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  margin: 0;
+  padding: 0;
+  height: 50%;
+  width: 30%;
+  list-style: none;
 }
 
 .logo {

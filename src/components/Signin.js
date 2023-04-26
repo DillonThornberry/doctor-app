@@ -9,11 +9,11 @@ const Signin = () => {
                 <h1>Please sign in to continue</h1>
                 <label>
                     Username:
-                    <input type='text'></input>
+                    <input type='text' className="input-label"></input>
                 </label>
                 <label>
                     Password:
-                    <input type='password' label='password'></input>
+                    <input type='password' className="input-label" label='password'></input>
                 </label>
                 <Link to="main"><button>Go</button></Link>
             </div>
