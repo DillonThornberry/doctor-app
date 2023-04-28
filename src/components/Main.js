@@ -2,18 +2,6 @@ import React, { Component} from 'react'
 import { Link } from 'react-router-dom'
 import AddPatient from './AddPatient'
 
-const generateRandomHistory = times => {
-    var output = []
-    const daysSince = 14
-    for(var i=0; i < daysSince; i++){
-        var thisDay = {}
-        for (var time of times){
-            thisDay[time] = Math.random() < .9
-        }
-        output.push(thisDay)
-    }
-    return output
-}
 
 const generateRandomPhone = () => {
     const first = Math.floor(Math.random() * 899 + 100)
@@ -22,68 +10,70 @@ const generateRandomPhone = () => {
     return `(${first}) ${second}-${third}`
 }
 
+const fakeHistory = null
+
 class Main extends Component {
     state = {
         addingNew: false, 
         patients: [
             {
-                name: "Robert Oldman", dob: new Date('01/03/1939'), times: [8, 19.5],
-                history: () => generateRandomHistory(this.times),
+                name: "Robert Oldman", dob: new Date('01/03/1939'), times: [8], 
+                history: fakeHistory,
                 caretaker: "Suzy Oldman", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
 
             },
             {
                 name: "Dorothy Gale", dob: new Date('04/09/1945'), times: [7],
-                history: () => generateRandomHistory(this.times),
+                history: fakeHistory,
                 caretaker: "Toto", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
             },
             {
                 name: "Richard Nixon", dob: new Date('11/12/1940'), times: [9, 12, 19.5],
-                history: () => generateRandomHistory(this.times),
+                history: fakeHistory,
                 caretaker: "Gerald Ford", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
             },
             {
                 name: "Albert Einstein", dob: new Date('09/15/1930'), times: [8, 10, 16, 20],
-                history: () => generateRandomHistory(this.times),
+                history: fakeHistory,
                 caretaker: "Isaac Newton", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
             },
             {
                 name: "Alan Anderson", dob: new Date('02/28/1948'), times: [9],
-                history: () => generateRandomHistory(this.times),
+                history: fakeHistory,
                 caretaker: "Abby Anderson", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
             },
             {
                 name: "Brenda Bates", dob: new Date('12/28/1944'), times: [8, 12.5],
-                history: () => generateRandomHistory(this.times),
+                history: fakeHistory,
                 caretaker: "Brendon Bates", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
             },
             {
                 name: "Claudia Cortez", dob: new Date('01/12/1935'), times: [5, 10, 17],
-                history: () => generateRandomHistory(this.times),
+                history: fakeHistory,
                 caretaker: "Cain Cortez", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
             },
             {
                 name: "Donald Trump", dob: new Date('06/14/1946'), times: [6, 18],
-                history: () => generateRandomHistory(this.times),
+                history: fakeHistory,
                 caretaker: "Michael Pence", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
             },
             {
                 name: "Joseph Biden", dob: new Date('11/20/1942'), times: [5, 7, 10, 12, 15, 18, 21],
-                history: () => generateRandomHistory(this.times),
+                history: fakeHistory,
                 caretaker: "Kamala Harris", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
             },
             {
                 name: "Francis Farmer", dob: new Date('05/05/1932'), times: [8],
-                history: () => generateRandomHistory(this.times),
+                history: fakeHistory,
                 caretaker: "Fedrico Farmer", 
                 phone: generateRandomPhone(), caretakerPhone: generateRandomPhone()
             },
@@ -112,7 +102,7 @@ class Main extends Component {
             <div>
                 {this.state.addingNew ? <AddPatient quit={() => this.closeAddPatient()}/> : null}
                 <button id='new-patient-button' onClick={() => this.setState({addingNew: true})}>Add New Patient</button>
-                <h1 class="logo" style={{fontSize: '50px'}}>MedAlert</h1>
+                <h1 className="main-page-logo">MedAlert</h1>
                 <div id="patients-div">
                     <ul class="patient-list">
                         <li style={{}}><b>Registered Patients</b></li>

@@ -1,5 +1,18 @@
 import React, {Component} from 'react'
 
+const makeTimeChoices = () => {
+  var output = []
+  for (var i = 0; i < 24; i++){
+    var hour = (i < 10 ? '0' : '') + i.toString()
+    for (var j = 0; j < 4; j++){
+      var minute = j * 15
+      minute = (minute < 10 ? '0' : '') + minute.toString()
+      output.push(<option>{`${hour}:${minute}`}</option>)
+    }
+  }
+  return output
+}
+
 export default function Add_Patient(props) {
   return (
     <div id='add-new-window'>
@@ -30,6 +43,19 @@ export default function Add_Patient(props) {
         </label>
       </div>
 
+      <div id='set-times'>
+        <label className='times-input'>
+          Select Medication Time:
+          <select id='dropdown'>
+            {makeTimeChoices()}
+          </select>
+        </label>
+      </div>
+
+      <div id='add-patient-buttons'>
+        <button id='confirm' onClick={() => window.alert("Feature not yet available")}>Confirm</button>
+        <button id='cancel' onClick={() => props.quit()}>Cancel</button>
+      </div>
 
     </div>
     

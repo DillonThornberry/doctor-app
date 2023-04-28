@@ -5,7 +5,7 @@ const Signin = () => {
     return ( 
         <div>
             <div id='signin-form'>
-                <h1 class='logo' style={{fontSize: '90px'}}>MedAlert</h1>
+                <h1 class='logo' style={{fontSize: '90px', color: 'red'}}>MedAlert</h1>
                 <h1>Please sign in to continue</h1>
                 <label>
                     Username:

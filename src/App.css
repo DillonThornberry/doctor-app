@@ -100,13 +100,51 @@
   padding: 10px;
 }
 
+#set-times{
+  padding: 10px;
+}
+
+.times-input{
+  margin: 25px;
+}
+
+#add-patient-buttons{
+  margin: 25px;
+ 
+}
+#confirm, #cancel{
+  margin: 10px;
+  width: 5%;
+  height: 7%;
+}
+
 .form-item{
   margin: 20px;
   padding: 5px;
 }
 
 #new-patient-button{
-  
+  position: fixed;
+  top: 50%;
+  left: 80px;
+  background-color: rgb(119, 175, 255);
+  height: 80px;
+  width: 180px;
+}
+
+#new-patient-button:hover{
+  background-color: rgb(99, 155, 235)
+}
+
+#history-table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.history-item{
+  border: 1px solid black;
+  text-align: center;
+  padding: 4px;
 }
 
 .patient-card, .patient-link {
@@ -119,6 +157,9 @@
   width: 100%;
   height: 10%;
   font-size: 15pt;
+}
+.patent-card:hover {
+  background-color: rbg(200,200,200)
 }
 
 #med-times {
@@ -154,9 +195,13 @@
   list-style: none;
 }
 
-.logo {
+.main-page-logo {
   font: verdana;
   color: red;
+  left: 30px;
+  position: fixed;
+  font-size: 70px;
+  top: 0;
 }
 
 #signin-form {
